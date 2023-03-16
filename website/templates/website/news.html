@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+    {% include 'website/includes/header.html' %}
+    <div class="container">
+        <br><br><br>
+        <div class="">
+        <div class="container text-light">
+            {% for post in post %}
+                {{ post.title }}
+                {{ post.img }}
+                {{ post.text|safe }}
+                {{ post.date }}
+
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+
+    {% include 'website/includes/footer.html' %}
+{% endblock %}
+</body>
+
+</html>

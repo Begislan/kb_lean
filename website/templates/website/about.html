@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+    {% include 'website/includes/header.html' %}
+    <div class="conteiner">
+        <br><br><br>
+        <div class="overflow-hidden text-center">
+            <h1 class="text-light">Страница сотрудников</h1><center>
+            <div class="row p-4">
+
+                {% for i in ab %}
+                    <div class="abb border border-success rounded-4 text-light col-3 p-0 m-1">
+                        <img src="{{ i.img.url }}" alt="" class="card-img-top rounded-top-4">
+                        <h2 class="display-4">{{ i.fio }}</h2>
+                        <h4>Специалист: <span class="text-success ">{{ i.special }}</span></h4>
+                        <h3>Тел: <span class="text-success">{{ i.phone }}</span></h3>
+                    </div>
+                {% endfor %}
+
+            </div></center>
+        </div>
+    </div>
+
+
+    {% include 'website/includes/footer.html' %}
+{% endblock %}
+</body>
+
+</html>

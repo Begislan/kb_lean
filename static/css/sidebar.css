@@ -71,3 +71,16 @@ body {
   input{
     margin-bottom: 10px;
   }
+  .navbarr{
+
+    /*height: 100%;*/
+  }
+  .conteiner{
+    max-width: 1550px;
+    height: auto;
+    margin: auto;
+  }
+  .abb{
+    width: 500px;
+  }
+

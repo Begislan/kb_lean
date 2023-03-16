@@ -1,9 +1,11 @@
 {% extends 'website/base.html' %}
 
 {% block content %}
-{% include 'website/includes/header.html' %}
-<div class="container"><br>
 
+{% include 'website/includes/header.html' %}
+
+<div class="container"><br>
+    <br><br>
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark" style="
     background-image: url(https://damion.club/uploads/posts/2022-09/1663963637_16-damion-club-p-temnii-fon-dlya-telegram-pinterest-19.jpg);
     background-size: cover;">
@@ -20,7 +22,7 @@
 <div class="col-md-8 px-0">
       <h1 class="display-4 fst-italic">Это страница о нас!</h1>
       <p class="lead my-3">Наш рабочий коллектив</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Кликайте чтобы читать полностью...</a></p>
+      <p class="lead mb-0"><a href="{% url 'about' %}" class="text-white fw-bold">Кликайте чтобы читать полностью...</a></p>
     </div>
   </div>
 

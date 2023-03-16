@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.views.generic.list import ListView
 from data_base.models import *
 
 
@@ -9,6 +10,7 @@ raz = Raz.objects.all()
 glav = Glav.objects.all()
 dataTheme = Theme.objects.all()
 newsData = News.objects.all().order_by('-date')[:6]
+ab = About.objects.all()
 
 
 def index(request):
@@ -55,3 +57,14 @@ def them_cat(request, pk, bi):
 
 def news(requet):
     return render(requet, )
+
+def about(request):
+    context = {
+        'ab': ab
+    }
+    return render(request, 'website/about.html', context)
+
+class InfoView(ListView):
+    model = News
+    template_name = 'website/news.html'
+    context_object_name = 'post'

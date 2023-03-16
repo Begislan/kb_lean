@@ -65,7 +65,7 @@ class About(models.Model):
     slug = models.SlugField(help_text='Поля автоматический заполняется!')
     special = models.CharField(max_length=255)
     phone = PhoneNumberField(unique=True, verbose_name='Телефон номер')
-    rezume = models.FileField(null=True)
+    rezume = models.FileField(null=True, blank=True, upload_to='files/%Y/%m/%d')
 
     def __str__(self):
         return self.fio

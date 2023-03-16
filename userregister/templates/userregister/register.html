@@ -3,6 +3,7 @@
 {% include 'website/includes/header.html' %}
 
 <div class="container">
+    <br><br><br>
     <center><h1 class="text-light">Регистрация пользователья</h1>
     <form action="{% url 'register' %}" method="POST" class="form">
         {% csrf_token%}
