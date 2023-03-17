@@ -55,6 +55,10 @@ def them_cat(request, pk, bi):
     return render(request, 'website/them_cat.html', context)
 
 
+def footer(request):
+    dNames = NameCategories.objects.all().filter(id)
+    return render(request, 'website/includes/footer.html', {'dNames': dNames})
+
 def news(requet):
     return render(requet, )
 
@@ -64,7 +68,12 @@ def about(request):
     }
     return render(request, 'website/about.html', context)
 
-class InfoView(ListView):
-    model = News
-    template_name = 'website/news.html'
-    context_object_name = 'post'
+def InfoView(request, pk):
+    post = News.objects.all().filter(id=pk)
+    context = {
+        'dataCat': dataCat,
+        'dataNameCat': dataNameCat,
+        'news': newsData,
+        'post': post
+    }
+    return render(request, 'website/news.html', context)

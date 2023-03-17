@@ -1,15 +1,15 @@
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-light bg-dark text-light position-fixed w-100 z-1">
-  <a class="navbar-brand text-success ms-2" href="#">KB_lean</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  <a class="navbar-brand text-success ms-2" href="#">KBlearning</a>
+  <button class="navbar-toggler bg-light me-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon   text-light" ></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <b><a class="nav-link" href="{% url 'home' %}" style="color: rgb(130, 132, 133);">Главная</a></b>
+        <b><a class="nav-link" href="{% url 'home' %}" style="color: rgb(130, 132, 133);">Башкы бет</a></b>
       </li>
       {% for data in dataCat %}
       <li class="nav-item dropdown">

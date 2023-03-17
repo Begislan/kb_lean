@@ -6,11 +6,11 @@
         <br><br><br>
         <div class="">
         <div class="container text-light">
-            {% for post in post %}
-                {{ post.title }}
-                {{ post.img }}
-                {{ post.text|safe }}
-                {{ post.date }}
+            {% for pos in post %}
+                {{ pos.title }}
+                {{ pos.img }}
+                {{ pos.text | safe }}
+                {{ pos.date }}
 
             {% endfor %}
         </div>
