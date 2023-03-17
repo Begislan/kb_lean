@@ -17,4 +17,5 @@ urlpatterns = [
                   path('cat/<int:pk>', cat, name='cat'),
                   path('them/<int:pk>/<int:bi>', them_cat, name='them_cat'),
                   path('post/<int:pk>', views.InfoView, name='post_detail'),
+                    path('info/', views.information, name='info')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

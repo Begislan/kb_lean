@@ -77,3 +77,12 @@ def InfoView(request, pk):
         'post': post
     }
     return render(request, 'website/news.html', context)
+
+
+def information(request):
+    context = {
+        'dataCat': dataCat,
+        'dataNameCat': dataNameCat,
+        'news': newsData,
+    }
+    return render(request, 'website/info.html', context)
