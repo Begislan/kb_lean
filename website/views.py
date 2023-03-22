@@ -59,8 +59,7 @@ def footer(request):
     dNames = NameCategories.objects.all().filter(id)
     return render(request, 'website/includes/footer.html', {'dNames': dNames})
 
-def news(requet):
-    return render(requet, )
+
 
 def about(request):
     context = {

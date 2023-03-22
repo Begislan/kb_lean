@@ -7,10 +7,10 @@
         <div class="">
         <div class="container text-light">
             {% for pos in post %}
-                {{ pos.title }}
-                {{ pos.img }}
+                <h2>{{ pos.title }}</h2>
+                <img src={{pos.img.url}} alt="">
                 {{ pos.text | safe }}
-                {{ pos.date }}
+                <b class="text-success display-5">{{ pos.date }}</b>
 
             {% endfor %}
         </div>
