@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic.list import ListView
 from data_base.models import *
+from userregister.models import DataUser
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -11,13 +13,16 @@ glav = Glav.objects.all()
 dataTheme = Theme.objects.all()
 newsData = News.objects.all().order_by('-date')[:6]
 ab = About.objects.all()
+datauser = DataUser.objects.all()
 
 
 def index(request):
+    # print(User)
     context = {
         'dataCat': dataCat,
         'dataNameCat': dataNameCat,
         'news': newsData,
+        'datauser':User
     }
     return render(request, 'website/index.html', context)
 
@@ -60,12 +65,12 @@ def footer(request):
     return render(request, 'website/includes/footer.html', {'dNames': dNames})
 
 
-
 def about(request):
     context = {
         'ab': ab
     }
     return render(request, 'website/about.html', context)
+
 
 def InfoView(request, pk):
     post = News.objects.all().filter(id=pk)

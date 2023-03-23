@@ -11,7 +11,20 @@
     background-size: cover;">
     <div class="col-md-8 px-0 border rounded ps-3 p-2 bg-secondary bg-opacity-10">
       <b>
-        <h1 class="display-4 fst-italic">Как работает сайт?</h1>
+{#          {% for i in datauser %}#}
+{#              {% if i.telInfo == 1 %}#}
+{#                 <h1 class="display-4 fst-italic">Как работает сайт?</h1>#}
+{#              {% endif %}#}
+{#          {%endfor%}#}
+          {% if user.is_authenticated %}
+          <h2 class="display-3 text-success">{{ user.username }}</h2>
+          <h3 class="display-5">{{ user.last_name }}</h3>
+
+          {% else %}
+
+          <h2 class="display-3">Сначала зарегистрируйтесь на сайт</h2>
+          <h3 class="display-5"></h3>
+          {% endif %}
       </b>
       <p class="lead my-3">Инструкция, документация</p>
       <p class="lead mb-0"><a href="{% url 'info' %}" class="text-info fw-bold">Кликайте чтобы читать полностью...</a>

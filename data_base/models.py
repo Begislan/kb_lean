@@ -17,6 +17,7 @@ class Categories(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+
 class NameCategories(models.Model):
     id_cat = models.ForeignKey(Categories, on_delete=models.CASCADE, verbose_name="Из какого категории")
     title = models.CharField(max_length=100, verbose_name="название предмета")
@@ -29,12 +30,11 @@ class NameCategories(models.Model):
         verbose_name = 'Предмет '
         verbose_name_plural = 'Предметы категории'
 
+
 class Raz(models.Model):
     categori = models.ForeignKey(NameCategories, on_delete=models.CASCADE, verbose_name="Из какого предмета")
     name = models.CharField(max_length=250, verbose_name="раздел предмета")
     slug = models.SlugField(help_text='Поля автоматический заполняется!', null=True, blank=True)
-
-
 
     def __str__(self):
         return self.name
@@ -42,6 +42,7 @@ class Raz(models.Model):
     class Meta:
         verbose_name = 'Раздел'
         verbose_name_plural = 'Раздел предмета'
+
 
 class Glav(models.Model):
     razdel = models.ForeignKey(Raz, on_delete=models.CASCADE, verbose_name="Из какого раздела")
@@ -54,6 +55,7 @@ class Glav(models.Model):
     class Meta:
         verbose_name = 'Глава'
         verbose_name_plural = 'Глава раздела'
+
 
 class Theme(models.Model):
     id_glav = models.ForeignKey(Glav, on_delete=models.CASCADE, verbose_name="Из какого глава")
@@ -68,10 +70,11 @@ class Theme(models.Model):
         verbose_name = 'Тема'
         verbose_name_plural = 'Тема главы'
 
+
 class News(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название новости")
     text = RichTextField(verbose_name="Текст:")
-    img =models.ImageField(upload_to='media/photo/%Y/%m/%d', verbose_name="изображение новость")
+    img = models.ImageField(upload_to='media/photo/%Y/%m/%d', verbose_name="изображение новость")
     date = models.DateTimeField(default=timezone.now, verbose_name="дата новость 'автоматически заполняется'")
 
     def __str__(self):
@@ -80,6 +83,7 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
 
 class About(models.Model):
     img = models.ImageField(upload_to='media/photo/%Y/%m/%d', verbose_name="изображение работника")
