@@ -16,18 +16,19 @@
 {#                 <h1 class="display-4 fst-italic">Как работает сайт?</h1>#}
 {#              {% endif %}#}
 {#          {%endfor%}#}
+
           {% if user.is_authenticated %}
-          <h2 class="display-3 text-success">{{ user.username }}</h2>
+          <h2 class="display-3 text-success"><span class="text-info"> Куш келиңиз</span> {{ user.username }}</h2>
           <h3 class="display-5">{{ user.last_name }}</h3>
 
           {% else %}
 
-          <h2 class="display-3">Сначала зарегистрируйтесь на сайт</h2>
+          <h2 class="display-4">Колдонуудан мурда, <a class="text-info fw-bold" href="{% url 'register' %}"> регистрациядан</a> өтүңүз!</h2>
           <h3 class="display-5"></h3>
           {% endif %}
       </b>
-      <p class="lead my-3">Инструкция, документация</p>
-      <p class="lead mb-0"><a href="{% url 'info' %}" class="text-info fw-bold">Кликайте чтобы читать полностью...</a>
+      <p class="lead my-3">Колдонуунун инструкциясы: </p>
+      <p class="lead mb-0"><a href="{% url 'info' %}" class="text-info fw-bold">Бул ссылканы басыңыз...</a>
       </p>
     </div>
   </div>
@@ -36,9 +37,9 @@
     /* background-image: url(https://damion.club/uploads/posts/2022-09/1663963637_28-damion-club-p-temnii-fon-dlya-telegram-pinterest-35.png); */
     background-size: cover;">
     <div class="col-md-8 px-0">
-      <h1 class="display-4 fst-italic">Это страница о нас!</h1>
-      <p class="lead my-3">Наш рабочий коллектив</p>
-      <p class="lead mb-0"><a href="{% url 'about' %}" class="text-white fw-bold">Кликайте чтобы читать полностью...</a>
+      <h1 class="display-5 fst-italic">"Компьютердик борбор" окуу лабораториясында иштеген кызматкерлер</h1>
+      <!-- <p class="lead my-3">Наш рабочий коллектив</p> -->
+      <p class="lead mb-0"><a href="{% url 'about' %}" class="text-info fw-bold">Ссылканы басып толук маалыматка ээ болуңуз...</a>
       </p>
     </div>
   </div>
@@ -48,36 +49,38 @@
 
   <div class="row mb-2">
     {% for i in news %}
+    
     <div class="col-md-6">
       <div class="row g-0 rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hoverchik">
         <div class="col p-4 d-flex flex-column position-static bg-dark text-light">
-          <strong class="d-inline-block mb-2 text-primary">Новости</strong>
-          <h3 class="mb-0">{{ i.title }}</h3>
+          <strong class="d-inline-block mb-2 text-primary">Жаңылыктар</strong>
+          
+          <a href="{% url 'post_detail' i.id %}" class="stretched-link text-success"><h3 class="mb-0">{{ i.title|truncatechars:50 }}</h3></a>
           <div class="mb-1 text-light">{{ i.date }}</div>
-          <p class="card-text mb-auto">{{ i.text|safe|truncatechars:100 }}</p>
-          <a href="{% url 'post_detail' i.id %}" class="stretched-link"></a>
+          
+          
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="{{ i.img.url }}" class="bd-placeholder-img" width="200" height="250">
+        <div class="col-auto d-none d-lg-block ">
+          <img src="{{ i.img.url }}" class="bd-placeholder-img" width="100%" height="auto">
         </div>
       </div>
     </div>
+{% endfor %}
 
 
-
-    {% endfor %}
+    
 
     <center>
 
       <div class="row bg-dark p-4 m-6">
-        <h1 class="text-light">Разработчики сайта</h1>
+        <h1 class="text-light">Сайтты түзүүчлөр</h1>
         <div class="col-lg-4">
           <img
             src="https://lh3.googleusercontent.com/x10PA4gfokD0_BUO5aafx5TStv9yIfcivYrDcn4yis1TtN_hd66T1Zs3d_L1Dun5euw0tIADxaSpnMaAIrc9CMUrHux4qPNL4Rgf5eMhNmNsrSkJY9864gG4iJwUCMYoK0w9Pouv65SuzjEID-q1PlJ9DnXSGt5UKmG8avleO7XyXfPHCX1sn5k_sqd-vczyWeSdAiOBtqmwnjFl-QwMEr9gPE5LDVvszr2oVrTbQ0cZYmEraJiwdPymylUcLrjRHjf6u-aQNRXN3ZSwgV_txuRmqlCqUYKTtwZcXbGVrXj1Boy6a1x1rNHW5IhCD_rWZgGh7Y7StHpUTA0OZJxSIAIRADe9q6u7hUU03nUbU8JnDeevBieYyShAWHyut5QnW1v0bjUZzcz5AqyH6h-Y5BsIaZjm5EFOxgP_BFwDfZDXCh9mJt-yerzQwnWRkrw5_rRTmHJ02-gKMz3GcdVfRNYl1RmB8q_Dpso5LD_rS-1zgxffYKFRBfjBOsHIspXHNITa1Se_2W2gN2L8HZVYJIaRhnnY50p0UCtVu4AobJBmYmAWHbHko6hWB-JNSTN6hz1eQoibLvxKGIfY70rdNAIo4AV6PpMKCWDIyTV84Vcl1m0LhtafMr4kdu4p1Y0sR1Stb0cqpO3-Rvy2sGTcgwy9QTp5l0GHIEryC7Y9_tIIbsA436FCCI5crkq_ukxZ6nH8LsAcG-9dpjwgcnY9vRG7qSQzVQ2Qhhkudl0KHlANdk4sTLZrDORY8l_S3PBAGrc1Gay81lvZFy4ryjBklnG2GXvVxXnEZKLFHQg0c40H2ilTvdr87STBJ26uaTXuN1C801HSPTdi5zPt32Q88S5NyQN6uylYO4zezoIuNKzCD2pl648pNAQLOgAT5-8x60c_1XTvG8nrkBcm9osjh-NbucXnXECUIisaQbIhk9jaUF6m=w347-h338-no?authuser=0"
             class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3 class="text-light fw-normal">Азизбек у Арген</h3>
           <h3 class="text-warning">Backend</h3>
-          <p><a class="btn btn-success" href="#">Читать далее »</a></p>
+          <p><a class="btn btn-success" href="#">Толугураак »</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
@@ -87,8 +90,8 @@
           <h3 class="text-light fw-normal">Баястан у Бегислан</h3>
           <h3 class="text-warning">Backend-Frontend</h3>
           <p><a class="btn btn-success"
-              href="https://www.linkedin.com/in/%D0%B1%D0%B5%D0%B3%D0%B8%D1%81%D0%BB%D0%B0%D0%BD-%D0%B1%D0%B0%D1%8F%D1%81%D1%82%D0%B0%D0%BD-%D1%83%D1%83%D0%BB%D1%83-95a196266">Читать
-              далее »</a></p>
+              href="https://www.linkedin.com/in/%D0%B1%D0%B5%D0%B3%D0%B8%D1%81%D0%BB%D0%B0%D0%BD-%D0%B1%D0%B0%D1%8F%D1%81%D1%82%D0%B0%D0%BD-%D1%83%D1%83%D0%BB%D1%83-95a196266">
+              Толугураак »</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
@@ -97,7 +100,7 @@
             class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3 class="text-light fw-normal">Абдыкадыров Султанбек</h3>
           <h3 class="text-warning">Backend</h3>
-          <p><a class="btn btn-success" href="#">Читать далее »</a></p>
+          <p><a class="btn btn-success" href="#">Толугураак »</a></p>
         </div><!-- /.col-lg-4 -->
       </div>
     </center>

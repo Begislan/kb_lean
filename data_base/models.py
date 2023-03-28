@@ -74,7 +74,7 @@ class Theme(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=250, verbose_name="Название новости")
     text = RichTextField(verbose_name="Текст:")
-    img = models.ImageField(upload_to='media/photo/%Y/%m/%d', verbose_name="изображение новость")
+    img = models.ImageField(upload_to='media/photo/%Y/%m/%d', verbose_name="изображение новость", blank=True)
     date = models.DateTimeField(default=timezone.now, verbose_name="дата новость 'автоматически заполняется'")
 
     def __str__(self):
@@ -90,7 +90,7 @@ class About(models.Model):
     fio = models.CharField(max_length=255, verbose_name="Фамилия, Имя, Отечества")
     slug = models.SlugField(help_text='Поля автоматический заполняется!')
     special = models.CharField(max_length=255, verbose_name="специалисть")
-    phone = PhoneNumberField(unique=True, verbose_name='Телефон номер')
+    phone = PhoneNumberField(unique=True, verbose_name='Телефон номер', blank=True)
     rezume = models.FileField(null=True, blank=True, upload_to='files/%Y/%m/%d', verbose_name="резюме необезательно")
 
     def __str__(self):
