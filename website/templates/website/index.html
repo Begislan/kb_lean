@@ -52,9 +52,9 @@
       <div class="row g-0 rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative hoverchik">
         <div class="col p-4 d-flex flex-column position-static bg-dark text-light">
           <strong class="d-inline-block mb-2 text-primary">Новости</strong>
-          <h3 class="mb-0">{{ i.title }}</h3>
+          <h3 class="mb-0">{{ i.title|truncatechars:20 }}</h3>
           <div class="mb-1 text-light">{{ i.date }}</div>
-          <p class="card-text mb-auto">{{ i.text|safe|truncatechars:100 }}</p>
+          <p class="card-text mb-auto">{{ i.text|safe|truncatechars:80 }}</p>
           <a href="{% url 'post_detail' i.id %}" class="stretched-link"></a>
         </div>
         <div class="col-auto d-none d-lg-block">
@@ -70,15 +70,15 @@
     <center>
 
       <div class="row bg-dark p-4 m-6">
-        <h1 class="text-light">Разработчики сайта</h1>
-        <div class="col-lg-4">
+        <h1 class="text-light">Разработчик сайта</h1>
+        {% comment %} <div class="col-lg-4">
           <img
             src="https://lh3.googleusercontent.com/x10PA4gfokD0_BUO5aafx5TStv9yIfcivYrDcn4yis1TtN_hd66T1Zs3d_L1Dun5euw0tIADxaSpnMaAIrc9CMUrHux4qPNL4Rgf5eMhNmNsrSkJY9864gG4iJwUCMYoK0w9Pouv65SuzjEID-q1PlJ9DnXSGt5UKmG8avleO7XyXfPHCX1sn5k_sqd-vczyWeSdAiOBtqmwnjFl-QwMEr9gPE5LDVvszr2oVrTbQ0cZYmEraJiwdPymylUcLrjRHjf6u-aQNRXN3ZSwgV_txuRmqlCqUYKTtwZcXbGVrXj1Boy6a1x1rNHW5IhCD_rWZgGh7Y7StHpUTA0OZJxSIAIRADe9q6u7hUU03nUbU8JnDeevBieYyShAWHyut5QnW1v0bjUZzcz5AqyH6h-Y5BsIaZjm5EFOxgP_BFwDfZDXCh9mJt-yerzQwnWRkrw5_rRTmHJ02-gKMz3GcdVfRNYl1RmB8q_Dpso5LD_rS-1zgxffYKFRBfjBOsHIspXHNITa1Se_2W2gN2L8HZVYJIaRhnnY50p0UCtVu4AobJBmYmAWHbHko6hWB-JNSTN6hz1eQoibLvxKGIfY70rdNAIo4AV6PpMKCWDIyTV84Vcl1m0LhtafMr4kdu4p1Y0sR1Stb0cqpO3-Rvy2sGTcgwy9QTp5l0GHIEryC7Y9_tIIbsA436FCCI5crkq_ukxZ6nH8LsAcG-9dpjwgcnY9vRG7qSQzVQ2Qhhkudl0KHlANdk4sTLZrDORY8l_S3PBAGrc1Gay81lvZFy4ryjBklnG2GXvVxXnEZKLFHQg0c40H2ilTvdr87STBJ26uaTXuN1C801HSPTdi5zPt32Q88S5NyQN6uylYO4zezoIuNKzCD2pl648pNAQLOgAT5-8x60c_1XTvG8nrkBcm9osjh-NbucXnXECUIisaQbIhk9jaUF6m=w347-h338-no?authuser=0"
             class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3 class="text-light fw-normal">Азизбек у Арген</h3>
           <h3 class="text-warning">Backend</h3>
           <p><a class="btn btn-success" href="#">Читать далее »</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-lg-4 --> {% endcomment %}
 
         <div class="col-lg-4">
           <img
@@ -91,14 +91,14 @@
               далее »</a></p>
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">
+        {% comment %} <div class="col-lg-4">
           <img
             src="https://lh3.googleusercontent.com/0oJdEtQkHhDJ0tWizSNq2IyFSqiVvV6O65UCQTBrVz01WlL6Y3RlMiAWbmZlrnUM6ptxFGkRgEpvMAco4P8TgYpUfMvnBNMKG_Q_sYsLpqzf8qcsrIjvsPTSD-pqOGZg9ONekekLj-GC3jEkmEJOv4C028K08DCvmIUCUbeln4Uc0UvSfvtMTY1GJaOWifZrlCZp0Zqsd0XyZLxz9MrM8GP8-QA8cUjO48GKh80P4fQMs_kWJZ6UhOycbdwoVlN6oUrX_85n_NZ7RAJf01A6MH3K8wa7CndwfhKxqy8_VIkZ3EHU1_Qcsek7pKuZqj9_0gdhCmjF8MyHiBbA-z1gTzw8XKXD9819W3Avi2JhtdK2xa7X80nmnLo877PmzBy6k0a1KekpTQFpNYNEOBfCnmvVGLBz2Cwkn75xdijsWZdpiZ2d07wPpDR6XtPTY8EF20TLWfJtBlXs7NkhE3v7qOleCISZCZvnJw0-prt69YINUwdas4EqP2f37srU8gW7R9fYHoLyKDzcqVi1MMg74xn9J7jQNGcEctkYx9C884Qc7eQTRbyw-rx4bkhE6uwIeyV40kPcpiRRLscvZX56pc_n_eoh5lu1wyr4cOp97pwN-k9OerqnIG7qJxAjAoMKdo7M0UBcW00DiiZzOV71fShnDIUZT4Wv1TFwjjgRDfhPk3bNn8-R1aIcLZgReBAeaoZHx5O9PzZkaPZz-DCrhnDBH1q-R44EaqlMiFO4KhVgQJ4ZH5zBOVyQ821OSvEAowfhICeBfp384U7BY91TgxQczaHoIO2BQejYV6UqKk7f078Zv_vZNxi6DogWaoiDTtKW1fHeSlaLLjly3ghGRG5F76t6lf-dLCoGVPRFqxPL8SnzeyKqSbzrsrZunfBFqc6G0mODjBOPeaHsXwtNGMOYD99UHU9qGlaRzGzwfN7t361P=s401-no?authuser=0"
             class="bd-placeholder-img rounded-circle" width="140" height="140">
           <h3 class="text-light fw-normal">Абдыкадыров Султанбек</h3>
           <h3 class="text-warning">Backend</h3>
           <p><a class="btn btn-success" href="#">Читать далее »</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-lg-4 --> {% endcomment %}
       </div>
     </center>
     <br>

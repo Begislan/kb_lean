@@ -1,28 +1,48 @@
 {% extends 'website/base.html' %}
 
 {% block content %}
-    {% include 'website/includes/header.html' %}
-    <div class="container"><br><br><br>
-        <div class="row">
+  {% include 'website/includes/header.html' %}
+  <div class="container">
+    <br /><br /><br />
+    <div class="row">
+      {% include 'website/includes/sidebar.html' %}
 
-
-            {% include 'website/includes/sidebar.html' %}
-            
-
-               <div class="col card bg-dark text-light">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi corporis eligendi eum id
-                    illum ipsum, iste minima neque nisi nulla numquam optio quidem, rerum temporibus ullam ut vitae
-                    voluptatibus?</h1>
-            </div>
-
-
+      <div class="col card bg-dark text-light">
+        <br>
+        <div class="border rounded p-3">
+          <h3 class="">„Наука без религии хромает, религия без науки слепа.“</h3>
+          <h6 class="text-success">Альберт Эйнштейн</h6>
         </div>
+
+        <br>
+        <div class="border rounded p-3">
+          <h3 class="">Наука не является и никогда не будет являться законченной книгой. Каждый важный успех приносит новые вопросы. Всякое развитие обнаруживает со временем все новые и более глубокие трудности.</h3>
+          <h6 class="text-success">Альберт Эйнштейн</h6>
+        </div>
+
+        <br>
+        <div class="border rounded p-3">
+          <h3 class="">Наука — самое важное, самое прекрасное и нужное в жизни человека.</h3>
+          <h6 class="text-success">Антон Павлович</h6>
+        </div>
+
+        <br>
+        <div class="border rounded p-3">
+          <h3 class="">В каждом из нас слишком много винтов, колес и клапанов, чтобы мы могли судить друг о друге по первому впечатлению или по двум-трем внешним признакам.</h3>
+          <h6 class="text-success">Антон Павлович</h6>
+        </div>
+
+        <br>
+        <div class="border rounded p-3">
+          <h3 class="">Не понимает человек шутки — пиши пропало! И знаете: это уж ненастоящий ум, будь человек хоть семи пядей во лбу.</h3>
+          <h6 class="text-success">Антон Павлович</h6>
+        </div>
+
+
+
+      </div>
     </div>
+  </div>
 
-
-
-    {% include 'website/includes/footer.html' %}
+  {% include 'website/includes/footer.html' %}
 {% endblock %}
-</body>
-
-</html>

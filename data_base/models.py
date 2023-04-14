@@ -24,7 +24,7 @@ class NameCategories(models.Model):
     slug = models.SlugField(help_text='Поля автоматический заполняется!', null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.title
+        return f"{self.id_cat} | {self.title}"
 
     class Meta:
         verbose_name = 'Предмет '
@@ -37,7 +37,7 @@ class Raz(models.Model):
     slug = models.SlugField(help_text='Поля автоматический заполняется!', null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.categori} | {self.name}"
 
     class Meta:
         verbose_name = 'Раздел'
@@ -50,8 +50,7 @@ class Glav(models.Model):
     slug = models.SlugField(help_text='Поля автоматический заполняется!', null=True, blank=True)
 
     def __str__(self):
-        return self.name
-
+        return f"{self.razdel} | {self.name}"
     class Meta:
         verbose_name = 'Глава'
         verbose_name_plural = 'Глава раздела'
@@ -64,7 +63,7 @@ class Theme(models.Model):
     slug = models.SlugField(help_text='Поля автоматический заполняется!', null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.theme
+        return f"{self.id_glav} | {self.theme}"
 
     class Meta:
         verbose_name = 'Тема'
