@@ -8,8 +8,8 @@
         <div class="container text-light">
             {% for pos in post %}
                 <h2>{{ pos.title }}</h2>
-                <img src={{pos.img.url}} alt="">
-                {{ pos.text | safe }}
+                <img src={{pos.img.url}} alt="" width="1000px" height="auto">
+                <span class="text-light">{{ pos.text | safe }}</span>
                 <b class="text-success display-5">{{ pos.date }}</b>
 
             {% endfor %}

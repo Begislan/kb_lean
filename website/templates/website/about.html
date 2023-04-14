@@ -5,15 +5,20 @@
     <div class="conteiner">
         <br><br><br>
         <div class="overflow-hidden text-center">
-            <h1 class="text-light">Страница сотрудников</h1><center>
+            <h1 class="text-light">Жумушчулардын терезеси</h1><center>
             <div class="row p-4">
 
                 {% for i in ab %}
                     <div class="abb border border-success rounded-4 text-light col-3 p-0 m-1" style="width: 24%">
-                        <img src="{{ i.img.url }}" alt="" class="card-img-top rounded-top-4">
+                        <img src="{{ i.img.url }}" alt="" class="card-img-top rounded-top-4"><br><br>
                         <h4 class="">{{ i.fio }}</h4>
+<<<<<<< HEAD
                         <h4>Специалист: <span class="text-success ">{{ i.special }}</span></h4>
                         
+=======
+                        <h5>Кызматы: <span class="text-success ">{{ i.special }}</span></h5>
+                        <h5>Тел: <span class="text-success">{{ i.phone }}</span></h5>
+>>>>>>> af8b7feca1dbf2108ee3fde1520fd518e194a773
                     </div>
                 {% endfor %}
 
